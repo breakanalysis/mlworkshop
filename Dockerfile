@@ -6,7 +6,7 @@ RUN apt-get update; \
 RUN apt-get clean
 COPY project /root/
 RUN pip install /root/cheat
-RUN rm /usr/local/etc/jupyter/nbconfig/notebook.d/widgetsnbextension.json
+RUN rm /usr/local/etc/jupyter/nbconfig/notebook.d/widgetsnbextension.json /tensorflow-1.9.0-cp35-cp35m-manylinux1_x86_64.whl
 WORKDIR /root/work
 EXPOSE 8888 54321
 CMD ["jupyter", "notebook", "--port=8888", "--no-browser", \
