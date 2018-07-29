@@ -27,7 +27,7 @@ def cheat(code):
                   print(X_test[0][:,:,0].shape)''',
       'bella': '''model = Sequential()
                   model.add(Conv2D(filters = 32, kernel_size = (5,5),padding = 'Same', 
-                  activation ='relu', input_shape = (28,28,1)))''',
+                                   activation ='relu', input_shape = (28,28,1)))''',
       'george': "model.add(MaxPool2D(pool_size=(2,2)))",
       'eric': '''# you may leave out 'rate=' from the next line
                     model.add(Dropout(rate=0.25))''',
@@ -44,7 +44,7 @@ def cheat(code):
       'pat': '''epochs = 1
                   batch_size = 86
                   history = model.fit(X_train, Y_train, batch_size = batch_size, epochs = epochs, 
-                      validation_data = (X_test, Y_test), verbose = 2)'''
+                                      validation_data = (X_test, Y_test), verbose = 2)'''
     }
     if code in cheat_dict:
         print(inspect.cleandoc(cheat_dict[code]))
