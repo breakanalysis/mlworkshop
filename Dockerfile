@@ -10,4 +10,4 @@ RUN rm /usr/local/etc/jupyter/nbconfig/notebook.d/widgetsnbextension.json /tenso
 WORKDIR /root/work
 EXPOSE 8888 54321
 CMD ["jupyter", "notebook", "--port=8888", "--no-browser", \
-    "--allow-root", "--ip=0.0.0.0", "--NotebookApp.token="]
+    "--allow-root", "--ip=0.0.0.0", "--NotebookApp.token=", "--NotebookApp.iopub_data_rate_limit=10000000"]
