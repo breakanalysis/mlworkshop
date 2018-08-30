@@ -9,7 +9,10 @@ RUN pip install /root/cheat
 RUN rm /usr/local/etc/jupyter/nbconfig/notebook.d/widgetsnbextension.json /tensorflow-1.9.0-cp35-cp35m-manylinux1_x86_64.whl
 WORKDIR /root/work
 RUN apt-get install -y git
-RUN git clone https://github.com/breakanalysis/ml-in-3-days.git
+RUN git clone -b cheat https://github.com/breakanalysis/ml-in-3-days.git; \
+    pip install /root/work/ml-in-3-days/cheatdiy; \
+    rm -rf /root/work/ml-in-3-days/cheatdiy; \
+    rm '/root/work/ml-in-3-days/ML - Do it yourself-Solution.ipynb'
 EXPOSE 8888 54321
 CMD ["jupyter", "notebook", "--port=8888", "--no-browser", \
     "--allow-root", "--ip=0.0.0.0", "--NotebookApp.token=", "--NotebookApp.iopub_data_rate_limit=10000000"]
