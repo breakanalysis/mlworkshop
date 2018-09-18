@@ -57,7 +57,7 @@ def hint(code):
       'b': "Choose either hint('b_method_name') or hint('b_file_path)."
       'b_method_name': "Use h2o.imp... (press tab see methods starting with imp)",
       'b_file_path': "By running !cmd in a cell, cmd is executed in bash. You can therefore run !ls followed by !ls fill_in_folder_here.",
-      'f': "Check out the help on range and list.",
+      'f': "The target column is the last one. To know how many columns there is use either train.describe() or train.ncols, or calculate it using that there are 28x28 pixels in each image.",
       'c': "In Python [-1] can be used to access the last column",
       'd': "Use df.split_frame(list_of_fractions)",
       'e': '''call as a 0-argument constructor, but no "new" or semicolon.''',
