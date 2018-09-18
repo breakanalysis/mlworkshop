@@ -2,10 +2,10 @@ import inspect
 
 def cheat(code):
     cheat_dict = {
-      'andy': "Paste the url into your browser, localhost:54321 or 127.0.0.1:54321",
-      'mia': '''test = h2o.import_file("data/mnist/mnist.test.csv.gz")
+      'a': "Paste the url into your browser, localhost:54321 or 127.0.0.1:54321",
+      'b': '''test = h2o.import_file("data/mnist/mnist.test.csv.gz")
                 train = h2o.import_file("data/mnist/mnist.train.csv.gz")''',
-      'sam': '''train[-1] = train[-1].asfactor()
+      'c': '''train[-1] = train[-1].asfactor()
                 test[-1] = test[-1].asfactor()''',
       'anne': "train, valid = train.split_frame([0.8])",
       'jessie': '''from h2o.estimators import H2ORandomForestEstimator
@@ -53,10 +53,10 @@ def cheat(code):
 
 def hint(code):
     hint_dict = {
-      'andy': "Urls can be interesting :)",
-      'mia': "Use h2o.imp... (press tab see methods starting with imp)",
+      'a': "Urls can be interesting :)",
+      'b': "Use h2o.imp... (press tab see methods starting with imp)",
       'alfred': "Check out the help on range and list.",
-      'sam': "In Python [-1] can be used to access the last column",
+      'c': "In Python [-1] can be used to access the last column",
       'anne': "Use df.split_frame(list_of_fractions)",
       'jessie': '''call as a 0-argument constructor, but no "new" or semicolon.''',
       'rick': "model_performance works just as a java method (it is a method on the model/estimator), and it has one argument which is the dataframe to measure performance on.",
@@ -83,14 +83,14 @@ def hint(code):
 
 def skeleton(code):
     skel = {
-        'andy': "Most exercises have skeletons, but sorry no skeleton here!",
-        'mia': '''test = h2o.{fill_in}("fill_in")
+        'a': "Most exercises have skeletons, but sorry no skeleton here!",
+        'b': '''test = h2o.{fill_in}("fill_in")
                   train = h2o.{fill_in}("fill_in")''',
         'alfred': '''x = fill_in 
                      y = fill_in
                      rf.train(fill_in_here)''',
         'anne': "train, valid = train.fill_in",
-        'sam': '''train[fill_in] = train[fill_in].asfactor()
+        'c': '''train[fill_in] = train[fill_in].asfactor()
                   test[fill_in] = test[fill_in].asfactor()''',
         'rick': "Most exercises have skeletons, but sorry no skeleton here!",
         'kate': '''Y_train = train.iloc[fill_in_to_select_all_rows,fill_in_to_select_target_column]
