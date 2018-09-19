@@ -58,16 +58,16 @@ def hint(code):
       'b_method_name': "Use h2o.imp... (press tab see methods starting with imp)",
       'b_file_path': "By running !cmd in a cell, cmd is executed in bash. You can therefore run !ls followed by !ls fill_in_folder_here.",
       'f': "The target column is the last one. To know how many columns there is use either train.describe() or train.ncols, or calculate it using that there are 28x28 pixels in each image.",
-      'c': "In Python [-1] can be used to access the last column",
+      'c': "In Python a[-1] can be used to access the last element of a",
       'd': "Use df.split_frame(list_of_fractions)",
-      'e': '''call as a 0-argument constructor, but no "new" or semicolon.''',
+      'e': '''see explaination above; the name of the class is H2ORandomForestEstimator.''',
       'g': "model_performance works just as a java method (it is a method on the model/estimator), and it has one argument which is the dataframe to measure performance on.",
       'h': "Hint 1: to select all rows, use colon. Hint 2: axis has to do with dropping rows vs columns.",
       'i': '''First part: X_test[0] extracts the first slice along the first dimension. This represents the first image. What is its shape?
               Second part: Select a slice of X_test[0], where the first two dimensions take any value, and the last takes only value 0.''',
-      'j': "There are two hints! Run either of hint('j_adding_layer'), hint('j_create_layer') or hint('j_kernel_size').",
+      'j': "There are three hints. Run either of hint('j_adding_layer'), hint('j_create_layer') or hint('j_kernel_size').",
       'j_adding_layer': "use model.add(your_layer_here)",
-      'j_create_layer': "NameOfLayer(param1 , param2, ... , named_param1=value1, named_param2=value2, ...)",
+      'j_create_layer': "the syntax is NameOfLayer(param1 , param2, ... , named_param1=value1, named_param2=value2, ...)",
       'j_kernel_size': "kernel_size=(5,5), this is a python tuple",
       'k': "follow the solution of previous exercise, but use pool_size as the only parameter",
       'l': "follow the solution of previous exercise, but use rate as the only parameter",
@@ -85,24 +85,7 @@ def hint(code):
 
 def skeleton(code):
     skel = {
-        'f': '''x = fill_in
-                y = fill_in
-                rf.train(fill_in_here)''',
-        'd': "train, valid = train.fill_in",
-        'c': '''train[fill_in] = train[fill_in].asfactor()
-                test[fill_in] = test[fill_in].asfactor()''',
-        'g': "Most exercises have skeletons, but sorry no skeleton here!",
-        'h': '''Y_train = train.iloc[fill_in_to_select_all_rows,fill_in_to_select_target_column]
-                X_train = train.drop(fill_in)
-                Y_test = test.iloc[fill_in,fill_in]
-                X_test = test.drop(fill_in)
-                del train, test
-               ''',
-        'i': "No skeleton, but checkout the hint if needed.",
-        'j': '''model = Sequential()
-                model.add(__fill_in__(filters = __fill_in__, kernel_size = __fill_in__ ,padding = 'Same',
-                activation =__fill_in__, input_shape = __fill_in__))''',
-        'k': "model.add(MaxPool2D(__fill_in__))",
+       'k': "model.add(MaxPool2D(__fill_in__))",
         'l': "model.add(Dropout(__fill_in__))",
         'm': '''model.add(Conv2D(__fill_in__))
                 model.add(Conv2D(__fill_in__))
