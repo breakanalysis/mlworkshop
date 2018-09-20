@@ -31,7 +31,7 @@ def cheat(code):
       'k': "model.add(MaxPool2D(pool_size=(2,2)))",
       'l': '''# you may leave out 'rate=' from the next line
               model.add(Dropout(rate=0.25))''',
-      'm': "The size of the data will be: ",
+      'm': "Starting with the input data, the size of the data will be: (None, 28, 28, 1) -> (None, 28, 28, 32) -> (None, 28, 28, 32) -> (None, 14, 14, 32) -> (None, 14, 14, 32).",
       'n': '''model.add(Conv2D(filters = 64, kernel_size = (3,3),padding = 'Same',
                   activation ='relu'))
               model.add(Conv2D(filters = 64, kernel_size = (3,3),padding = 'Same',
