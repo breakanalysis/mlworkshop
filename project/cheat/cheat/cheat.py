@@ -31,17 +31,18 @@ def cheat(code):
       'k': "model.add(MaxPool2D(pool_size=(2,2)))",
       'l': '''# you may leave out 'rate=' from the next line
               model.add(Dropout(rate=0.25))''',
-      'm': '''model.add(Conv2D(filters = 64, kernel_size = (3,3),padding = 'Same',
+      'm': "The size of the data will be: ",
+      'n': '''model.add(Conv2D(filters = 64, kernel_size = (3,3),padding = 'Same',
                   activation ='relu'))
               model.add(Conv2D(filters = 64, kernel_size = (3,3),padding = 'Same',
                   activation ='relu'))
               model.add(MaxPool2D(pool_size=(2,2), strides=(2,2)))
               model.add(Dropout(0.25))''',
-      'n': '''model.add(Flatten())
+      'o': '''model.add(Flatten())
               model.add(Dense(256, activation = "relu"))
               model.add(Dropout(0.5))
               model.add(Dense(10, activation = "softmax"))''',
-      'o': '''epochs = 1
+      'p': '''epochs = 1
               batch_size = 86
               history = model.fit(X_train, Y_train, batch_size = batch_size, epochs = epochs,
                                   validation_data = (X_test, Y_test), verbose = 2)'''
@@ -54,7 +55,7 @@ def cheat(code):
 def hint(code):
     hint_dict = {
       'a': "Urls can be interesting :)",
-      'b': "Choose either hint('b_method_name') or hint('b_file_path)."
+      'b': "Choose either hint('b_method_name') or hint('b_file_path).",
       'b_method_name': "Use h2o.imp... (press tab see methods starting with imp)",
       'b_file_path': "By running !cmd in a cell, cmd is executed in bash. You can therefore run !ls followed by !ls fill_in_folder_here.",
       'f': "The target column is the last one. To know how many columns there is use either train.describe() or train.ncols, or calculate it using that there are 28x28 pixels in each image.",
@@ -71,11 +72,16 @@ def hint(code):
       'j_kernel_size': "kernel_size=(5,5), this is a python tuple",
       'k': "For the name of the layer class check the imports above. Use pool_size=(2,2)" ,
       'l': "The only parameter you need is rate. For the name of the layer class check the imports above.",
-      'm': '''The convnets should have the parameters: filters, activation, padding and kernel_size.
+      'm': '''Layers often have extra weights called biases which are additive constants. For example b is a bias weight in the expression ax+b.
+              Convnets will have one separate bias for every filter. Maxpooling layers have the effect that they half the data's size across each axis if the pool_size is (2,2).
+      ''',
+      'n': '''The convnets should have the parameters: filters, activation, padding and kernel_size.
               The maxpooling layer should have pool_size.
               Dropout as before with parameter 0.25.''',
-      'n': '''Dense(n) gives a dense layer with n units (neurons).''',
-      'o': '''Use the test set as validation_data. This should be given as a 2-tuple containing image data and targets.'''
+      'o': '''Dense(n) gives a dense layer with n units (neurons). Each neuron will have an incomming connection from each neuron in the previous layer,
+              which is why it is called dense.
+      ''',
+      'p': '''Use the test set as validation_data. This should be given as a 2-tuple containing image data and targets.'''
     }
     if code in hint_dict:
         print(inspect.cleandoc(hint_dict[code]))
