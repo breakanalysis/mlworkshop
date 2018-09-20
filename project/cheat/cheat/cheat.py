@@ -69,39 +69,15 @@ def hint(code):
       'j_adding_layer': "use model.add(your_layer_here)",
       'j_create_layer': "the syntax is NameOfLayer(param1 , param2, ... , named_param1=value1, named_param2=value2, ...)",
       'j_kernel_size': "kernel_size=(5,5), this is a python tuple",
-      'k': "follow the solution of previous exercise, but use pool_size as the only parameter",
-      'l': "follow the solution of previous exercise, but use rate as the only parameter",
+      'k': "For the name of the layer class check the imports above. Use pool_size=(2,2)" ,
+      'l': "The only parameter you need is rate. For the name of the layer class check the imports above.",
       'm': '''The convnets should have the parameters: filters, activation, padding and kernel_size.
-              The maxpooling layer should have pool_size and strides.
+              The maxpooling layer should have pool_size.
               Dropout as before with parameter 0.25.''',
-      'n': '''Follow previous exercises. Just like the rate parameter in Dropout can be used without name, the
-              parameter controlling the number of units in a Dense layer can be used without name by placing it first.''',
-      'o': '''Use the training set as validation_data. This should be given as a tuple image data followed by targets.'''
+      'n': '''Dense(n) gives a dense layer with n units (neurons).''',
+      'o': '''Use the test set as validation_data. This should be given as a 2-tuple containing image data and targets.'''
     }
     if code in hint_dict:
         print(inspect.cleandoc(hint_dict[code]))
     else:
         print('Invalid exercise id. Did you type the id correctly?')
-
-def skeleton(code):
-    skel = {
-       'k': "model.add(MaxPool2D(__fill_in__))",
-        'l': "model.add(Dropout(__fill_in__))",
-        'm': '''model.add(Conv2D(__fill_in__))
-                model.add(Conv2D(__fill_in__))
-                model.add(MaxPool2D(__fill_in__))
-                model.add(Dropout(__fill_in__))''',
-        'n': '''model.add(__fill_in__)
-                model.add(__fill_in__)
-                model.add(__fill_in__)
-                model.add(__fill_in__)''',
-        'o': '''epochs = 1
-                batch_size = 86
-                history = model.fit(__fill_in__, __fill_in__, batch_size = __fill_in__, epochs = __fill_in__,
-                     validation_data = __fill_in__, verbose = 2)'''
-
-    }
-    if code in skel:
-        print(inspect.cleandoc(skel[code]))
-    else:
-        print('No skeletons in this wardrobe. Did you type the id correctly?')
