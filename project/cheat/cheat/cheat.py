@@ -6,7 +6,11 @@ def cheat(code):
       'b': '''test = h2o.import_file("data/mnist/mnist.test.csv.gz")
               train = h2o.import_file("data/mnist/mnist.train.csv.gz")''',
       'c': '''train[-1] = train[-1].asfactor()
-                test[-1] = test[-1].asfactor()''',
+              test[-1] = test[-1].asfactor()
+              or:
+              last = 28*28
+              train[last] = train[last].asfactor()
+              test[last] = test[last].asfactor()''',
       'd': "train, valid = train.split_frame([0.8])",
       'e': '''from h2o.estimators import H2ORandomForestEstimator
               rf = H2ORandomForestEstimator()
@@ -62,14 +66,14 @@ def hint(code):
       'c': "In Python a[-1] can be used to access the last element of a",
       'd': "Use df.split_frame(list_of_fractions)",
       'e': '''see explaination above; the name of the class is H2ORandomForestEstimator.''',
-      'g': "model_performance works just as a java method (it is a method on the model/estimator), and it has one argument which is the dataframe to measure performance on.",
-      'h': "Hint 1: to select all rows, use colon. Hint 2: axis has to do with dropping rows vs columns.",
+      'g': "train, test and valid are already dataframes",
+      'h': "Hint 1: to select all rows, use colon. Hint 2: you do not need to specify inplace as the default of False is good here",
       'i': '''First part: X_test[0] extracts the first slice along the first dimension. This represents the first image. What is its shape?
               Second part: Select a slice of X_test[0], where the first two dimensions take any value, and the last takes only value 0.''',
       'j': "There are three hints. Run either of hint('j_adding_layer'), hint('j_create_layer') or hint('j_kernel_size').",
       'j_adding_layer': "use model.add(your_layer_here)",
       'j_create_layer': "the syntax is NameOfLayer(param1 , param2, ... , named_param1=value1, named_param2=value2, ...)",
-      'j_kernel_size': "kernel_size=(5,5), this is a python tuple",
+      'j_kernel_size': "setting kernel_size=(5,5) makes this a 5-by-5 convolution. (5,5) this is a python tuple",
       'k': "For the name of the layer class check the imports above. Use pool_size=(2,2)" ,
       'l': "The only parameter you need is rate. For the name of the layer class check the imports above.",
       'm': '''Layers often have extra weights called biases which are additive constants. For example b is a bias weight in the expression ax+b.
