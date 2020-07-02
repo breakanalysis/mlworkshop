@@ -6,6 +6,7 @@ RUN apt-get update; \
 RUN apt-get clean
 COPY project /root/
 RUN pip install /root/cheat
+RUN pip install /root/cheatdiy
 RUN rm -rf /usr/local/etc/jupyter/nbconfig/notebook.d/widgetsnbextension.json /tensorflow*
 WORKDIR /root/work
 EXPOSE 8888 54321
