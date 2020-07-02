@@ -2,7 +2,7 @@ FROM tensorflow/tensorflow:2.1.1-jupyter
 
 RUN apt-get update; \
   apt-get install -y default-jre; \
-  pip install --no-cache keras h2o seaborn sklearn;
+  pip install --no-cache keras==2.1 h2o seaborn sklearn neo4j py2neo neomodel;
 RUN apt-get clean
 COPY project /root/
 RUN pip install /root/cheat
